@@ -182,6 +182,9 @@
     padding: 10px 0;
     height: 48px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
 
   .top-header .info-header {
@@ -234,7 +237,9 @@
   .hero-title span.heighlight {
     color: var(--primary-color)
   }
-
+  .heighlight {
+    color: var(--primary-color)
+  }
   .rbt-btn.rounded-player-2 {
     width: 101px;
     height: 101px;
@@ -388,9 +393,9 @@
     border-radius: 2px;
   }
 
-  .our-services {
+  /* .our-services {
     padding-bottom: 7rem;
-  }
+  } */
 
   .our-service-title {
     /* display: flex; */
@@ -426,11 +431,7 @@
     font-weight: 400;
     color: var(--primary-color);
     text-align: center;
-    display: inline-flex;
-    /* Use flexbox to center the line */
-    align-items: center;
-    /* Center the line vertically */
-    position: relative;
+ 
   }
 
   .title-2::after {
@@ -824,7 +825,7 @@
     text-decoration: none;
     font-family: 'DM Sans 24pt';
     font-size: 17px;
-    /* width: 300px; */
+    width: 300px;
     /* height: 69px; */
     font-weight: 700;
     display: inline-flex;
@@ -2353,16 +2354,20 @@
   }
 
   .our-work-link {
+    transition: all 0.25s;
+    position: relative; 
     border: 1px solid #fff;
     padding: 45px 65px;
     width: auto;
     height: 100%;
   }
 
-  .our-work-link {
+  /* .our-work-link {
     transition: all 0.25s;
-  }
-
+  } */
+  .link-icon {
+    display: none;
+}
   .our-work-link .bold-title {
     color: red;
   }
@@ -2376,19 +2381,27 @@
     /* transform: translateX(0px); */
   }
 
+  .our-work-icon img.default-img,
   .our-work-icon img.hover-img {
-    width: 80px;
-    height: 80px;
+      width: 80px;
+      height: 80px;
+      transition: all 0.25s;
+  }
+  .our-work-icon img.hover-img {
     display: none;
-    transition: all 0.25s;
-  }
-
-  .our-work-icon img.default-img {
-    width: 80px;
-    height: 80px;
-    transition: all 0.25s;
-  }
-
+}
+.slide-in-icon {
+  position: absolute;
+  left: 0px; /* Start position off the left */
+  top: 5%;
+  transform: translateX(-10%); /* Start completely off to the left */
+  transition: transform 0.9s ease, opacity 0.9s ease; /* Smooth slide-in effect */
+  opacity: 0; /* Initially hidden */
+}
+.slide-in-icon img {
+  width: auto; /* Adjust size for larger icon */
+  height: 100%;
+}
   .our-work-careers a:hover .our-work-icon img.default-img {
     display: none;
   }
@@ -2409,7 +2422,6 @@
 
   .link-icon {
     display: none;
-
   }
 
   .our-work-careers a:hover .link-icon {
@@ -2417,14 +2429,17 @@
     position: absolute;
     right: 35px;
     top: 20px;
-    transition: all 0.25s;
-  }
+    transform: translate(0, -50%); 
+}
 
-
+  .our-work-careers a:hover .slide-in-icon {
+    transform: translateX(0); /* Slide into position */
+    opacity: 1; /* Make visible */
+}
   /* ------------------------------------services page css ----------------------------- */
   .our-services {
     background-color: var(--secondary-color);
-    padding: 80px 0px;
+    padding: 80px 0px 0px 0px;
   }
 
   .no-gutters {
@@ -2485,16 +2500,18 @@
   .sub-services-para {
     font-size: 16px;
     font-family: 'poppins';
-    font-weight: 300;
-    line-height: 1.625rem;
-    text-align: justify;
+    font-weight: 500;
+    line-height:26px;
+    text-align: center;
     color: var(--bs-white);
   }
 
   .is-topspace {
     margin-top: 100px;
   }
-
+  .service-right-area{
+    padding-right: 0px;
+  }
   .service-right-area .gradient-overlay {
     background: linear-gradient(275deg, rgba(0, 0, 0, 0) 25%, #141418 100%) !important;
 
@@ -2706,9 +2723,193 @@
     font-weight: 400;
     line-height: 2rem;
   }
+  .about-services-slider{
+    position: relative;
+  }
+  .about-services-slider .sliders{
+    position: absolute;
+  }
   .about-services-slider-detail .swiper-wrapper{
     height: auto !important;
   }
+  .about-services-slider-detail .swiper-slide{
+    width: 300px !important;
+    height:auto
+   }
+   .about-services-slider-detail .servics-tools{
+    padding:45px 65px;
+    height: 100%;
+   }
+   .about-services-slider-detail .servics-tools .servies-tools-icon img{
+    width:auto;
+   }
+   .small-size-downimg-content{
+    height: 100%;    
+   }
+   .graphics-services{
+      width: 100%;
+      height: 446px;
+      background-image: url('../images/graphics.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-top: 5rem;
+   }
+   .subservices-description{
+    position: relative;
+    bottom:90px;
+    width: 100%;
+   }
+   .center-col {
+    position: relative;
+    top: -50px;
+   }  
+   .subservice-title-content{
+    width: 360px;;
+    height: 100%;
+    padding:80px 39px;
+    background-color: var(--bs-white);
+    
+   }
+   .subservice-title-content:hover{
+    background-color: var(--primary-font-color);
+    transition: all 0.25s;
+   }
+   .subservice-title-content .title-2{
+    font-weight: 600;
+    line-height: 40px;
+   }
+   .subservice-title-content:hover  .title-2{
+    color:var(--bs-white);
+   }
+   
+.horizontal-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  /* justify-content: center; */
+}
+
+.horizontal-list li {
+  margin: 0 80px 0px 0px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--primary-color-2, #FFF);
+  text-align: center;
+  /* our mission */
+  font-family: "DM Sans";
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px; /* 160% */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.our-process-img {
+  position: relative;
+  display: inline-block;
+  height: auto;
+  z-index: 0;
+}
+
+.our-process-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #090909;
+  opacity: 0.75;
+  overflow: hidden; /* Ensure shine effect does not overflow */
+}
+
+.overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start position off-screen for non-hover state */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0,0,0, 1) 100%);
+  transform: skewX(0deg);
+  z-index: 1; /* Place behind text */
+  transition: transform 0.75s ease-in-out;
+}
+
+.our-process-img:hover .overlay::before {
+  animation: shine-left-to-right 0.75s forwards; /* Apply shine animation on hover */
+}
+
+@keyframes shine-left-to-right {
+  0% {
+    transform: translateX(-100%) skewX(0deg); /* Start position off-screen */
+  }
+  100% {
+    transform: translateX(100%) skewX(0deg); /* End position off-screen */
+  }
+}
+
+.our-process-img:not(:hover) .overlay::before {
+  animation: shine-right-to-left 0.75s forwards; /* Apply reverse shine animation when not hovered */
+}
+
+@keyframes shine-right-to-left {
+  0% {
+    transform: translateX(100%) skewX(0deg); /* Start position off-screen */
+  }
+  100% {
+    transform: translateX(-100%) skewX(0deg); /* End position off-screen */
+  }
+}
+.our-process-img-overlay-text {
+  position: relative;
+  color: #FFF;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.56px;
+  text-transform: capitalize;
+  z-index: 2;
+}
+
+.process-lists {
+  position: absolute;
+  top: -12px;
+  right: 30px;
+  background-color: red;
+  padding: 3px 29px;
+  z-index: 3; /* Ensure it is on top of other elements */
+}
+
+.process-lists span {
+  color: #FFF;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+  text-transform: capitalize;
+}
+
+.our-process-content p {
+  text-align: justify;
+}
+
   /* all media query here  */
   @media only screen and (max-width:1400px) {
     .our-services.mySwiper {
@@ -2948,6 +3149,10 @@
     .contact-info{
       width: 100%;
       height: auto;
+    }
+    .about-services-slider .sliders{
+      position: unset;
+      margin-top: 5rem;
     }
   }
 
@@ -3196,7 +3401,7 @@
     }
 
     .our-services {
-      padding: 40px 0px;
+      padding: 40px 0px 0px 0px;
     }
 
     .sub-services {
@@ -3257,7 +3462,10 @@
     .count-round .content span {
       font-size: 16px;
     }
-
+    .hero-title span{
+    font-size: 1.55rem;
+    line-height: 30px;
+    }
   }
 
   @media only screen and (max-width:400px) {
